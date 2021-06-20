@@ -48,7 +48,7 @@ export default {
 			try {
 				const data = await ApiServices.newQuote({ quote: title });
 				this.listQuote = [...data];
-			} catch ({ response }) {
+			} catch ({ response } = { data: this.$store.state.unhandled }) {
 				swal("Sorry", response.data, "error");
 			}
 
